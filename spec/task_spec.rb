@@ -11,11 +11,9 @@ resource 'Tasks' do
   let!(:task) { project_first.tasks.create(:name_task => 'some_task', :done => false, :priority => 10) }
   # task = project_first.tasks.create(:name => 'some_task', :done => false, :priority => 10)
 
-  with_options :required => true do
-    parameter :name_task, "Task name"
-    parameter :done, "Task status"
-    parameter :priority, "Task priority"
-  end
+  parameter :name_task, "Task name", :required => true
+  parameter :done, "Task status"
+  parameter :priority, "Task priority"
 
   get "projects/:project_id/tasks" do
     
