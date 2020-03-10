@@ -13293,3 +13293,187 @@ Processing by TasksController#destroy as HTML
   [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
 Completed 204 No Content in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 452)
   [1m[35m (4.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (7.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (4.3ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "projet_first"], ["created_by", "First_owner"], ["created_at", "2020-03-10 16:21:56.922061"], ["updated_at", "2020-03-10 16:21:56.922061"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "projet_second"], ["created_by", "Second_owner"], ["created_at", "2020-03-10 16:21:56.928645"], ["updated_at", "2020-03-10 16:21:56.928645"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/projects" for 127.0.0.1 at 2020-03-10 17:21:56 +0100
+Processing by ProjectsController#index as HTML
+  Parameters: {"project"=>{}}
+  [1m[36mProject Load (4.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+[active_model_serializers]   [1m[36mTask Load (12.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."priority" ASC[0m  [["project_id", 19]]
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."priority" ASC[0m  [["project_id", 20]]
+[active_model_serializers]   [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."priority" ASC[0m  [["project_id", 19]]
+[active_model_serializers]   [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."priority" ASC[0m  [["project_id", 20]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (33.13ms)
+Completed 200 OK in 55ms (Views: 36.5ms | ActiveRecord: 17.8ms | Allocations: 11565)
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 19]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 20]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "projet_first"], ["created_by", "First_owner"], ["created_at", "2020-03-10 16:21:57.016149"], ["updated_at", "2020-03-10 16:21:57.016149"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "projet_second"], ["created_by", "Second_owner"], ["created_at", "2020-03-10 16:21:57.017981"], ["updated_at", "2020-03-10 16:21:57.017981"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/projects/21" for 127.0.0.1 at 2020-03-10 17:21:57 +0100
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"21", "project"=>{}}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."priority" ASC[0m  [["project_id", 21]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (1.32ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.5ms | Allocations: 891)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "projet_first"], ["created_by", "First_owner"], ["created_at", "2020-03-10 16:21:57.027080"], ["updated_at", "2020-03-10 16:21:57.027080"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "projet_second"], ["created_by", "Second_owner"], ["created_at", "2020-03-10 16:21:57.029999"], ["updated_at", "2020-03-10 16:21:57.029999"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/projects" for 127.0.0.1 at 2020-03-10 17:21:57 +0100
+Processing by ProjectsController#create as HTML
+  Parameters: {"title"=>"First_project", "created_by"=>"Seleznev", "project"=>{"title"=>nil, "created_by"=>"Seleznev"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.11ms)
+Completed 400 Bad Request in 22ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 2412)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "projet_first"], ["created_by", "First_owner"], ["created_at", "2020-03-10 16:21:57.057830"], ["updated_at", "2020-03-10 16:21:57.057830"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "projet_second"], ["created_by", "Second_owner"], ["created_at", "2020-03-10 16:21:57.059779"], ["updated_at", "2020-03-10 16:21:57.059779"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/projects" for 127.0.0.1 at 2020-03-10 17:21:57 +0100
+Processing by ProjectsController#create as HTML
+  Parameters: {"title"=>"First_project", "created_by"=>"Seleznev", "project"=>{"title"=>"First_project", "created_by"=>"Seleznev"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "First_project"], ["created_by", "Seleznev"], ["created_at", "2020-03-10 16:21:57.064053"], ["updated_at", "2020-03-10 16:21:57.064053"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."priority" ASC[0m  [["project_id", 27]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (1.44ms)
+Completed 201 Created in 4ms (Views: 1.5ms | ActiveRecord: 1.0ms | Allocations: 1194)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "projet_first"], ["created_by", "First_owner"], ["created_at", "2020-03-10 16:21:57.070292"], ["updated_at", "2020-03-10 16:21:57.070292"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (0.2ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "projet_second"], ["created_by", "Second_owner"], ["created_at", "2020-03-10 16:21:57.071989"], ["updated_at", "2020-03-10 16:21:57.071989"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/projects/28" for 127.0.0.1 at 2020-03-10 17:21:57 +0100
+Processing by ProjectsController#update as HTML
+  Parameters: {"title"=>"project_NOT_first", "id"=>"28", "project"=>{"title"=>"project_NOT_first"}}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Update (0.4ms)[0m  [1m[33mUPDATE "projects" SET "title" = $1, "updated_at" = $2 WHERE "projects"."id" = $3[0m  [["title", "project_NOT_first"], ["updated_at", "2020-03-10 16:21:57.076101"], ["id", 28]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."priority" ASC[0m  [["project_id", 28]]
+[active_model_serializers] Rendered ProjectSerializer with ActiveModelSerializers::Adapter::Attributes (1.45ms)
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 1.3ms | Allocations: 1328)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "projet_first"], ["created_by", "First_owner"], ["created_at", "2020-03-10 16:21:57.082814"], ["updated_at", "2020-03-10 16:21:57.082814"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "projet_second"], ["created_by", "Second_owner"], ["created_at", "2020-03-10 16:21:57.084594"], ["updated_at", "2020-03-10 16:21:57.084594"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/projects/30" for 127.0.0.1 at 2020-03-10 17:21:57 +0100
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>"30", "project"=>{}}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 30]]
+  [1m[36mProject Destroy (0.5ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = $1[0m  [["id", 30]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 3ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 818)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (0.6ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "projet_first"], ["created_by", "First_owner"], ["created_at", "2020-03-10 16:21:57.094362"], ["updated_at", "2020-03-10 16:21:57.094362"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.6ms)[0m  [1m[32mINSERT INTO "tasks" ("name_task", "done", "priority", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name_task", "some_task"], ["done", false], ["priority", 10], ["project_id", 32], ["created_at", "2020-03-10 16:21:57.107451"], ["updated_at", "2020-03-10 16:21:57.107451"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/projects/32/tasks" for 127.0.0.1 at 2020-03-10 17:21:57 +0100
+Processing by TasksController#index as HTML
+  Parameters: {"project_id"=>"32", "task"=>{}}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 32]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.48ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.6ms | Allocations: 1255)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 32]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "projet_first"], ["created_by", "First_owner"], ["created_at", "2020-03-10 16:21:57.123970"], ["updated_at", "2020-03-10 16:21:57.123970"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name_task", "done", "priority", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name_task", "some_task"], ["done", false], ["priority", 10], ["project_id", 33], ["created_at", "2020-03-10 16:21:57.126574"], ["updated_at", "2020-03-10 16:21:57.126574"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/projects/33/tasks" for 127.0.0.1 at 2020-03-10 17:21:57 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"name_task"=>"First_task", "done"=>false, "priority"=>100, "task"=>{"name_task"=>nil, "done"=>false, "priority"=>100}, "project_id"=>"33"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.06ms)
+Completed 400 Bad Request in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1191)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "projet_first"], ["created_by", "First_owner"], ["created_at", "2020-03-10 16:21:57.136995"], ["updated_at", "2020-03-10 16:21:57.136995"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name_task", "done", "priority", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name_task", "some_task"], ["done", false], ["priority", 10], ["project_id", 34], ["created_at", "2020-03-10 16:21:57.139346"], ["updated_at", "2020-03-10 16:21:57.139346"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/projects/34/tasks" for 127.0.0.1 at 2020-03-10 17:21:57 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"name_task"=>"First_task", "done"=>false, "priority"=>100, "project_id"=>"34", "task"=>{"name_task"=>"First_task", "done"=>false, "priority"=>100}}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name_task", "done", "priority", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name_task", "First_task"], ["done", false], ["priority", 100], ["project_id", 34], ["created_at", "2020-03-10 16:21:57.144705"], ["updated_at", "2020-03-10 16:21:57.144705"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered TaskSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 201 Created in 5ms (Views: 0.8ms | ActiveRecord: 1.1ms | Allocations: 1164)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "projet_first"], ["created_by", "First_owner"], ["created_at", "2020-03-10 16:21:57.150085"], ["updated_at", "2020-03-10 16:21:57.150085"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name_task", "done", "priority", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name_task", "some_task"], ["done", false], ["priority", 10], ["project_id", 35], ["created_at", "2020-03-10 16:21:57.152460"], ["updated_at", "2020-03-10 16:21:57.152460"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/tasks/11" for 127.0.0.1 at 2020-03-10 17:21:57 +0100
+Processing by TasksController#update as HTML
+  Parameters: {"name_task"=>"NOT_some_task", "id"=>"11", "task"=>{"name_task"=>"NOT_some_task"}}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mTask Update (0.5ms)[0m  [1m[33mUPDATE "tasks" SET "name_task" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3[0m  [["name_task", "NOT_some_task"], ["updated_at", "2020-03-10 16:21:57.159014"], ["id", 11]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered TaskSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 7ms (Views: 1.2ms | ActiveRecord: 1.5ms | Allocations: 1431)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProject Create (0.3ms)[0m  [1m[32mINSERT INTO "projects" ("title", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "projet_first"], ["created_by", "First_owner"], ["created_at", "2020-03-10 16:21:57.174382"], ["updated_at", "2020-03-10 16:21:57.174382"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name_task", "done", "priority", "project_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name_task", "some_task"], ["done", false], ["priority", 10], ["project_id", 36], ["created_at", "2020-03-10 16:21:57.177248"], ["updated_at", "2020-03-10 16:21:57.177248"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/tasks/12" for 127.0.0.1 at 2020-03-10 17:21:57 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"id"=>"12", "task"=>{}}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 445)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
