@@ -159,12 +159,17 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">PUT tasks/35</pre>
+          <pre class="request route highlight">PUT tasks/77</pre>
 
 
             <h4>Body</h4>
             <pre class="request body">{"name_task":"NOT_some_task"}</pre>
 
+            <h4>cURL</h4>
+            <pre class="request curl">curl &quot;http://localhost:3000/docstasks/77&quot; -d &#39;{&quot;name_task&quot;:&quot;NOT_some_task&quot;}&#39; -X PUT \
+	-H &quot;Content-Type: application/json&quot; \
+	-H &quot;Host: example.org&quot; \
+	-H &quot;Cookie: &quot;</pre>
 
             <h3>Response</h3>
               <h4>Headers</h4>
@@ -175,10 +180,10 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;236ea909f49397e56a863f1e2e86b192&quot;
+ETag: W/&quot;8dcffee50653cc0d99f4481c45f1e8ce&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 7f4a5ffd-bc90-4ee2-bd61-9a2807dad4d5
-X-Runtime: 0.007980
+X-Request-Id: 2f870e0b-3d66-4427-b059-3fb01f7ba7af
+X-Runtime: 0.007965
 Content-Length: 64</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>

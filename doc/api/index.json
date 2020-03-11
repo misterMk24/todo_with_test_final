@@ -1,0 +1,93 @@
+{
+  "resources": [
+    {
+      "name": "Projects",
+      "explanation": "Projects resource",
+      "examples": [
+        {
+          "description": "Creating a project",
+          "link": "projects/creating_a_project.json",
+          "groups": "all",
+          "route": "/projects",
+          "method": "post"
+        },
+        {
+          "description": "Creating a project",
+          "link": "projects/creating_a_project.json",
+          "groups": "all",
+          "route": "/projects",
+          "method": "post"
+        },
+        {
+          "description": "Deleting a project",
+          "link": "projects/deleting_a_project.json",
+          "groups": "all",
+          "route": "/projects/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Get the order with id",
+          "link": "projects/get_the_order_with_id.json",
+          "groups": "all",
+          "route": "projects/:id",
+          "method": "get"
+        },
+        {
+          "description": "Listing projects",
+          "link": "projects/listing_projects.json",
+          "groups": "all",
+          "route": "/projects",
+          "method": "get"
+        },
+        {
+          "description": "Updating a project",
+          "link": "projects/updating_a_project.json",
+          "groups": "all",
+          "route": "/projects/:id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Tasks",
+      "explanation": "Tasks resource",
+      "examples": [
+        {
+          "description": "Creating a project",
+          "link": "tasks/creating_a_project.json",
+          "groups": "all",
+          "route": "/projects/:project_id/tasks",
+          "method": "post"
+        },
+        {
+          "description": "Creating a project",
+          "link": "tasks/creating_a_project.json",
+          "groups": "all",
+          "route": "/projects/:project_id/tasks",
+          "method": "post"
+        },
+        {
+          "description": "Deleting a task",
+          "link": "tasks/deleting_a_task.json",
+          "groups": "all",
+          "route": "/tasks/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Get the tasks within a project",
+          "link": "tasks/get_the_tasks_within_a_project.json",
+          "groups": "all",
+          "route": "projects/:project_id/tasks",
+          "method": "get"
+        },
+        {
+          "description": "Updating a project",
+          "link": "tasks/updating_a_project.json",
+          "groups": "all",
+          "route": "tasks/:id",
+          "method": "put"
+        }
+      ]
+    }
+  ]
+}

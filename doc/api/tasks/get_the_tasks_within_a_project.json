@@ -1,0 +1,60 @@
+{
+  "resource": "Tasks",
+  "resource_explanation": "Tasks resource",
+  "http_method": "GET",
+  "route": "projects/:project_id/tasks",
+  "description": "Get the tasks within a project",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "name_task",
+      "description": "Task name"
+    },
+    {
+      "name": "done",
+      "description": "Task status"
+    },
+    {
+      "name": "priority",
+      "description": "Task priority"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "projects/446/tasks",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[binary data]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"640bb836b9ede37d3bffb9d448653a0c\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "bc253d26-5389-4c51-b67b-2cfeaea112cb",
+        "X-Runtime": "0.009069",
+        "Content-Length": "63"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

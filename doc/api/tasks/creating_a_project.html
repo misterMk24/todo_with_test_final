@@ -159,12 +159,17 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST /projects/106/tasks</pre>
+          <pre class="request route highlight">POST /projects/232/tasks</pre>
 
 
             <h4>Body</h4>
             <pre class="request body">{"name_task":"First_task","done":false,"priority":100}</pre>
 
+            <h4>cURL</h4>
+            <pre class="request curl">curl &quot;http://localhost:3000/docs/projects/232/tasks&quot; -d &#39;{&quot;name_task&quot;:&quot;First_task&quot;,&quot;done&quot;:false,&quot;priority&quot;:100}&#39; -X POST \
+	-H &quot;Content-Type: application/json&quot; \
+	-H &quot;Host: example.org&quot; \
+	-H &quot;Cookie: &quot;</pre>
 
             <h3>Response</h3>
               <h4>Headers</h4>
@@ -175,10 +180,10 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;749fdd7802309e2586209163553dff13&quot;
+ETag: W/&quot;d7dbe24b70b691c9c370ff0318ed4c53&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: dabe5091-3d71-4ffb-8863-81e82f5c4278
-X-Runtime: 0.006289
+X-Request-Id: 25a46e10-679e-4ee9-8c78-53378047c5fb
+X-Runtime: 0.006222
 Content-Length: 62</pre>
             <h4>Status</h4>
             <pre class="response status">201 Created</pre>

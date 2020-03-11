@@ -159,10 +159,15 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET projects/104/tasks</pre>
+          <pre class="request route highlight">GET projects/230/tasks</pre>
 
 
 
+            <h4>cURL</h4>
+            <pre class="request curl">curl -g &quot;http://localhost:3000/docsprojects/230/tasks&quot; -X GET \
+	-H &quot;Content-Type: application/json&quot; \
+	-H &quot;Host: example.org&quot; \
+	-H &quot;Cookie: &quot;</pre>
 
             <h3>Response</h3>
               <h4>Headers</h4>
@@ -173,10 +178,10 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-ETag: W/&quot;87868ca00b0f0c6282c7a2af1087200c&quot;
+ETag: W/&quot;d507f80235e31417e8b31d2512e8e6f4&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 4eb207fb-dad7-41bb-8cdf-4d94c08922ce
-X-Runtime: 0.008092
+X-Request-Id: 280ab93e-9770-4c32-aff2-0c486ca23d34
+X-Runtime: 0.008414
 Content-Length: 62</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>

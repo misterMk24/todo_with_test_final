@@ -1,0 +1,56 @@
+{
+  "resource": "Projects",
+  "resource_explanation": "Projects resource",
+  "http_method": "GET",
+  "route": "/projects",
+  "description": "Listing projects",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "title",
+      "description": "Project name"
+    },
+    {
+      "name": "created_by",
+      "description": "Project owner"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/projects",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[binary data]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"d109faf02d9d8b072274643c6fe81513\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "86b06558-7530-4fbb-bf77-add4a8ce3ead",
+        "X-Runtime": "0.041925",
+        "Content-Length": "147"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

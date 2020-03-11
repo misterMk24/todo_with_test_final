@@ -1,5 +1,6 @@
-require 'rails_helper'
+require 'acceptance_helper'
 require 'rspec_api_documentation/dsl'
+
 
 resource 'Tasks' do 
   header "Content-Type", "application/json"

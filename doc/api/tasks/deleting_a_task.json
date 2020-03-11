@@ -1,0 +1,57 @@
+{
+  "resource": "Tasks",
+  "resource_explanation": "Tasks resource",
+  "http_method": "DELETE",
+  "route": "/tasks/:id",
+  "description": "Deleting a task",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "name_task",
+      "description": "Task name"
+    },
+    {
+      "name": "done",
+      "description": "Task status"
+    },
+    {
+      "name": "priority",
+      "description": "Task priority"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "/tasks/150",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "438bce0e-183a-4558-ac06-3f3b058c78df",
+        "X-Runtime": "0.003939"
+      },
+      "response_content_type": null,
+      "curl": null
+    }
+  ]
+}

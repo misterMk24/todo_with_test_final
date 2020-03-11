@@ -25,8 +25,8 @@ group :development, :test do
 end
 
 group :test do
-#  gem 'rspec_api_documentation'
-#  gem 'rspec-rails'
+# gem 'rspec_api_documentation'
+# gem 'rspec-rails'
 end
 
 group :development do

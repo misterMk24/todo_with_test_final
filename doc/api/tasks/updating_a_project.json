@@ -1,0 +1,60 @@
+{
+  "resource": "Tasks",
+  "resource_explanation": "Tasks resource",
+  "http_method": "PUT",
+  "route": "tasks/:id",
+  "description": "Updating a project",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "name_task",
+      "description": "Task name"
+    },
+    {
+      "name": "done",
+      "description": "Task status"
+    },
+    {
+      "name": "priority",
+      "description": "Task priority"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "tasks/149",
+      "request_body": "{\"name_task\":\"NOT_some_task\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[binary data]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"84a9cfd93e8762e4fd44cf7dfce8c86c\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "d7d7029b-d639-40e2-b5ff-a7709e4fc56c",
+        "X-Runtime": "0.006908",
+        "Content-Length": "65"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}
