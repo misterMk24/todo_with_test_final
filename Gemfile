@@ -12,7 +12,7 @@ gem 'pg'
 gem 'puma', '~> 4.1'
 gem 'active_model_serializers', '~>0.10.0'
 gem 'bootsnap', '>= 1.4.2', require: false
-
+gem 'raddocs'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
@@ -21,7 +21,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec_api_documentation'
   gem 'rspec-rails'
-  gem 'raddocs'
 end
 
 group :test do
