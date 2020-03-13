@@ -1,29 +1,28 @@
 class TasksController < ApplicationController
+  expose :project
+  expose :task, build_params: :task_params
+  expose :tasks, ->{ project.tasks } 
+
   def index
-    @project = Project.find(params[:project_id])
-    @task = @project.tasks.all
-    render json: @task, status: :ok
+    render json: tasks, status: :ok
   end
 
   def create
-    @project = Project.find(params[:project_id])
-    @task = @project.tasks.new(task_params)
-    if @task.save
-      render json: @task, status: :created
+    task_create = tasks.new(task_params)
+    if task_create.save
+      render json: task_create, status: :created
     else
-      render json: @task.errors, status: 400
+      render json: task_create.errors, status: 400
     end
   end
 
   def update
-    @task = Task.find(params[:id])
-    @task.update(task_params)
-    render json: @task, status: :ok
+    task.update(task_params)
+    render json: task, status: :ok
   end
 
   def destroy
-    @task = Task.find(params[:id])
-    @task.destroy
+    task.destroy
     render status: :no_content
   end
 

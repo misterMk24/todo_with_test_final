@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
+gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # gem 'sqlite3', '~> 1.4'
@@ -13,7 +13,7 @@ gem 'puma', '~> 4.1'
 gem 'active_model_serializers', '~>0.10.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'raddocs'
-gem 'decent_exposure', '3.0.0'
+gem 'decent_exposure'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
