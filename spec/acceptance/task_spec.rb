@@ -19,7 +19,7 @@ resource 'Tasks' do
   get "projects/:project_id/tasks" do
     
     example_request "Get the tasks within a project" do
-      task_response = project_first.tasks.to_json(:only => 
+      task_response = project_first.tasks.order(:priority).to_json(:only => 
         [
           :id,
           :name_task,

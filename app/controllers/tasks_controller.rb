@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   expose :tasks, ->{ project.tasks } 
 
   def index
-    render json: tasks, status: :ok
+    render json: tasks.order(:priority), status: :ok
   end
 
   def create
