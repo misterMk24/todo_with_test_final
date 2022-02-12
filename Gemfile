@@ -9,7 +9,7 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'pg'
 # gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 gem 'active_model_serializers', '~>0.10.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
